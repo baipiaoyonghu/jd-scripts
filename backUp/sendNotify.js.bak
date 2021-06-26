@@ -12,10 +12,6 @@
 const querystring = require("querystring");
 const $ = new Env();
 const timeout = 15000;//超时时间(单位毫秒)
-const cookie_name = [];
-//const num ;
-let num =0;
-
 // =======================================微信server酱通知设置区域===========================================
 //此处填你申请的SCKEY.
 //(环境变量名 PUSH_KEY)
@@ -63,8 +59,8 @@ let QYWX_KEY = '';
 - 文本消息: 1 (数字一)
 - 图文消息（mpnews）: 素材库图片id, 可查看此教程(http://note.youdao.com/s/HMiudGkb)或者(https://note.youdao.com/ynoteshare1/index.html?id=1a0c8aff284ad28cbd011b29b3ad0191&type=note)
 */
-// QYWX_AM = '';
-let QYWX_AM='';  //## 991
+let QYWX_AM = '';
+
 // =======================================iGot聚合推送通知设置区域===========================================
 //此处填您iGot的信息(推送key，例如：https://push.hellyw.com/XXXXXXXX)
 let IGOT_PUSH_KEY = '';
@@ -142,100 +138,6 @@ if (process.env.PUSH_PLUS_TOKEN) {
 if (process.env.PUSH_PLUS_USER) {
   PUSH_PLUS_USER = process.env.PUSH_PLUS_USER;
 }
-//#############定义用户名称#####################################################
-
-if (process.env.COOKIE_NAME1 && process.env.COOKIE_NAME_EN ) {
- //cookie_name[0] = process.env.COOKIE_NAME1;cnt++;
-  cookie_name[0] = process.env.COOKIE_NAME1;num = 0;
-}
-if (process.env.COOKIE_NAME2 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[1] = process.env.COOKIE_NAME2;num = 1;
-}
-if (process.env.COOKIE_NAME3 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[2] = process.env.COOKIE_NAME3;num = 2;
-}
-if (process.env.COOKIE_NAME4 && process.env.COOKIE_NAME_EN  ) {
-  cookie_name[3] = process.env.COOKIE_NAME4;num = 3;
-}
-if (process.env.COOKIE_NAME5 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[4] = process.env.COOKIE_NAME5;num = 4;
-}
-if (process.env.COOKIE_NAME6 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[5] = process.env.COOKIE_NAME6;num = 5;
-}
-if (process.env.COOKIE_NAME7 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[6] = process.env.COOKIE_NAME7;num = 6;
-}
-if (process.env.COOKIE_NAME8 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[7] = process.env.COOKIE_NAME8;num = 7;
-}
-if (process.env.COOKIE_NAME9 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[8] = process.env.COOKIE_NAME9;num = 8;
-}
-if (process.env.COOKIE_NAME10 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[9] = process.env.COOKIE_NAME10;num = 9;
-}
-if (process.env.COOKIE_NAME11 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[10] = process.env.COOKIE_NAME11;num = 10;
-}
-if (process.env.COOKIE_NAME12 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[11] = process.env.COOKIE_NAME12;num = 11;
-}
-if (process.env.COOKIE_NAME13 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[12] = process.env.COOKIE_NAME13;num = 12;
-}
-if (process.env.COOKIE_NAME14 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[13] = process.env.COOKIE_NAME14;num = 13;
-}
-if (process.env.COOKIE_NAME15 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[14] = process.env.COOKIE_NAME15;num = 14;
-}
-if (process.env.COOKIE_NAME16 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[15] = process.env.COOKIE_NAME16;num = 15;
-}
-if (process.env.COOKIE_NAME17 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[16] = process.env.COOKIE_NAME17;num = 16;
-}
-if (process.env.COOKIE_NAME18 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[17] = process.env.COOKIE_NAME18;num = 17;
-}
-if (process.env.COOKIE_NAME19 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[18] = process.env.COOKIE_NAME19;num = 18;
-}
-if (process.env.COOKIE_NAME20 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[19] = process.env.COOKIE_NAME20;num = 19;
-}
-if (process.env.COOKIE_NAME21 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[20] = process.env.COOKIE_NAME21;num = 20;
-}
-if (process.env.COOKIE_NAME22 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[21] = process.env.COOKIE_NAME22;num = 21;
-}
-if (process.env.COOKIE_NAME23 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[22] = process.env.COOKIE_NAME23;num = 22;
-}
-if (process.env.COOKIE_NAME24 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[23] = process.env.COOKIE_NAME24;num = 23;
-}
-if (process.env.COOKIE_NAME25 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[24] = process.env.COOKIE_NAME25;num = 24;
-}
-if (process.env.COOKIE_NAME26 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[25] = process.env.COOKIE_NAME26;num = 25;
-}
-if (process.env.COOKIE_NAME27 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[26] = process.env.COOKIE_NAME27;num = 26;
-}
-if (process.env.COOKIE_NAME28 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[27] = process.env.COOKIE_NAME28;num = 27;
-}
-if (process.env.COOKIE_NAME29 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[28] = process.env.COOKIE_NAME29;num = 28;
-}
-if (process.env.COOKIE_NAME30 && process.env.COOKIE_NAME_EN ) {
-  cookie_name[29] = process.env.COOKIE_NAME30;num = 29;
-}
-//console.log(`\n ${cookie_name}========\n`);
 //==========================云端环境变量的判断与接收=========================
 
 /**
@@ -246,26 +148,9 @@ if (process.env.COOKIE_NAME30 && process.env.COOKIE_NAME_EN ) {
  * @param author 作者仓库等信息  例：`本脚本免费使用 By：xxxx`
  * @returns {Promise<unknown>}
  */
-let name_num1 = ['号1', '号2','号3','号4','号5','号6','号7','号8','号9','号10','号11','号12','号13','号14','号15','号16','号17','号18','号19','号20','号21','号22','号23','号24','号25','号26','号27','号28','号29','号30',];
-let name_num2 = ['号 1', '号 2','号 3','号 4','号 5','号 6','号 7','号 8','号 9','号 10','号 11','号 12','号 13','号 14','号 15','号 16','号 17','号 18','号 19','号 20','号 21','号 22','号 23','号 24','号 25','号 26','号 27','号 28','号 29','号 30',];
-
-async function sendNotify(text, desp, params = {}, author = '\n\n仅供用于学习 https://t.me/jdfruit') {
+async function sendNotify(text, desp, params = {}, author = '\n\n仅供用于学习') {
   //提供6种通知
-
- //name_num1[0] = "号1";
   desp += author;//增加作者信息，防止被贩卖等
-  //添加了自定义名称，对应config文件中的COOKIE_NAME1-30
-    for ( ;num >= 0 ;num--) {
-      if (desp.includes(name_num1[num])) {
-        desp = desp.replace(new RegExp(name_num1[num], "gm"), "号：【" + cookie_name[num] + "】");
-      }
-      else if (desp.includes(name_num2[num])) {
-        desp = desp.replace(new RegExp(name_num2[num], "gm"), "号：【" + cookie_name[num] + "】");
-      }
-    }
-
-  //text  = text.replace(new RegExp("京东","gm"), "X东" );//全部京东都改成X东
-  if (text.includes("FreeFuck") || desp.includes("FreeFuck")) return ;
   await Promise.all([
     serverNotify(text, desp),//微信server酱
     pushPlusNotify(text, desp)//pushplus(推送加)
@@ -646,7 +531,7 @@ function qywxamNotify(text, desp) {
               textcard: {
                 title: `${text}`,
                 description: `${desp}`,
-                url: 'https://github.com/lxk0301/jd_scripts',
+                url: '',
                 btntxt: '更多'
               }
             }
